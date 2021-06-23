@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    background-color: black;
+    color: white;
+    padding: 50px 100px 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    padding: 5px;
+}
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+.footer a:hover {
+    color: #f24b4b;
+}
+
+.copyright p {
+    margin-top: 40px;
+    font-family: sans-serif;
+    color: grey;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.content-col {
+    flex: 1;
+}
+.icon-1 {
+    font-size: 50px;
+}

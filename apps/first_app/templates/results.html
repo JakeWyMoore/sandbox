@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Cars:</h1>
+
+    {% for c in car %}
+        <h2>This car is a</h2>
+        <ul>
+            <li>Year: {{ c.year }}</li>
+            <li>Make: {{ c.make }}</li>
+            <li>Model: {{ c.model }}</li>
+            <li>{{ c.image }}</li>
+            <li>{{ c.image.url }}</li>
+            <img src="{{ c.image.url }}" alt="" width="200px">
+        </ul>
+    {% endfor %}
+
+</body>
+</html>
