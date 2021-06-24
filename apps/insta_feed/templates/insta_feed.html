@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <title>Insta Feed</title>
 
     <style>
         body {
-            background-color: #121212;
+            padding-bottom: 50px;
+            background: #121212;
         }
         .wrapper {
             width: 100%;
@@ -40,14 +44,26 @@
             margin-top: 30px;
         }
         .upload form {
-            background-color: white;
 
-            padding: 30px;
             justify-content: center;
         }
-        /* .upload input[type=file] {
+        .upload input[type=file] {
+            display: none;
+        }
+        .file-button {
+            display: inline-block;
+            color: white;
+            transition: .2s ease;
+            background: none;
+            border: none;
+            font-size: 26px;
+        }
+        .file-button:hover {
+            cursor: pointer;
+            color: #e65353;
+            text-shadow: 0px 0px 10px #e65353;
 
-        } */
+        }
         .upload form button {
             transition: .5s ease;
             background: none;
@@ -55,7 +71,6 @@
             font-size: 18px;
         }
         .upload form button:hover {
-            color: #e65353;
             cursor: pointer;
         }
         .feed {
@@ -127,20 +142,52 @@
 
             padding: 25px 30px;
         }
+        .hidden {
+            display: none;
+        }
+        .show {
+            color: white;
+            margin-top: 20px;
+            font-size: 26px;
+        }
+        .top-section p{
+            font-weight: 900;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #e65353;
+            float: right;
+            margin-right: 30px;
+            margin-left: -100px;
+            text-transform: uppercase;
+        }
+        .top-section p:hover {
+            cursor: pointer;
+            color: #e65353;
+            text-shadow: 0px 0px 10px #e65353;
+        }
+
+        
 
 
     </style>
 </head>
 <body>
     <div class="wrapper">
+        <div class="top-section">
+            <a href="/insta-feed/logout">
+                <p>logout</p></i> 
+            </a>
+        </div>
         <div class="head">
             <h1>@{{ user.username }}</h1>
-            <a href="/insta-feed/logout">Logout</a>
+            <!-- <a href="/insta-feed/logout">Logout</a> -->
             <div class="upload">
                 <form action="/insta-feed/add-image" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input type="file" name="image" accept="image/*">
-                    <button type="submit"><i class="fas fa-plus-circle"></i></button>
+                    <label for="image" class="file-button">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input type="file" name="image" accept="image/*" id="image">
+                    </label><br>
+                    <button type="submit" class="hidden"><i class="fas fa-plus-circle"></i></button>
                 </form>
             </div>
         </div>
@@ -165,5 +212,19 @@
             </table>
         </div>
     </div>
+
+    <script>
+        $(document).ready(
+            function(){
+                $('input:file').change(
+                    function(){
+                        if ($(this).val()) {
+                            $('.hidden').removeClass('hidden').addClass('show')
+                        }
+                    }
+                )
+            }
+        )
+    </script>
 </body>
 </html>
