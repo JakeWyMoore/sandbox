@@ -47,6 +47,14 @@ def logout(request):
     return redirect('/insta-feed')
 
 
+def delete(request, img_id):
+    if 'user_id' in request.session:
+        image = Images.objects.get(id = img_id)
+        image.delete()
+        return redirect('/insta-feed/dashboard')
+    else:
+        return redirect('/insta-feed/dashboard')
+
 def add_image(request):
     if 'user_id' in request.session:
         if request.method == 'POST':

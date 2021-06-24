@@ -8,4 +8,5 @@ urlpatterns = [
     path('reg-logic', views.reg_logic),
     path('logout', views.logout),
     path('add-image', views.add_image),
+    path('delete/<int:img_id>', views.delete),
 ]

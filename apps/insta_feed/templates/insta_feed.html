@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>Insta Feed</title>
 
     <style>
+        body {
+            background-color: #121212;
+        }
         .wrapper {
             width: 100%;
             margin: 0px;
@@ -17,19 +24,111 @@
             text-align: center;
             padding: 10px 0px 35px 0px;
         }
+
+        .head h1 {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: white;
+        }
+        .head a {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #e65353;
+            text-decoration: none;
+        }
+        .upload {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .upload form {
+            background-color: white;
+
+            padding: 30px;
+            justify-content: center;
+        }
+        /* .upload input[type=file] {
+
+        } */
+        .upload form button {
+            transition: .5s ease;
+            background: none;
+            border: none;
+            font-size: 18px;
+        }
+        .upload form button:hover {
+            color: #e65353;
+            cursor: pointer;
+        }
         .feed {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .feed table {
-            width: 915px;
-        }
+        /* .feed table {
+            width: 770px;
+        } */
         .feed img {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
+            margin: 5px;
         }
+        .feed table tr {
+            width: 640px;
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+        .feed table tr td {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .feed table tr td a:hover{
+            color: #e65353;
+            border: 3px solid #e65353;
+            border-radius: 50px;
+
+            padding: 25px 30px;
+        }
+        .container {
+            position: relative;
+            width: 210px;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .container:hover .image {
+            opacity: 0.1;
+        }
+        .container:hover .middle {
+            opacity: 1;
+        }
+        .text a {
+            text-decoration: none;
+            color: white;
+            font-size: 36px;
+            transition: .5s ease;
+
+            border: 3px solid white;
+            border-radius: 50px;
+
+            padding: 25px 30px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -37,18 +136,29 @@
         <div class="head">
             <h1>@{{ user.username }}</h1>
             <a href="/insta-feed/logout">Logout</a>
-            <form action="/insta-feed/add-image" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <input type="file" name="image" accept="image/*">
-                <button type="submit">Upload</button>
-            </form>
+            <div class="upload">
+                <form action="/insta-feed/add-image" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="image" accept="image/*">
+                    <button type="submit"><i class="fas fa-plus-circle"></i></button>
+                </form>
+            </div>
         </div>
         <div class="feed">
             <table>
                 <tr>
                     <td>            
-                        {% for i in images %}
-                            <img src="{{ i.image.url }}" alt="image">
+                        {% for i in images reversed%}
+                            <div class="container">
+                                <img src="{{ i.image.url }}" alt="image" class="image">
+                                <div class="middle">
+                                    <div class="text">
+                                        <a href="/insta-feed/delete/{{ i.id }}">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         {% endfor %}
                     </td>
                 </tr>
