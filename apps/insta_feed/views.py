@@ -9,7 +9,9 @@ def dashboard(request):
         logged_user = User.objects.get(id = request.session['user_id'])
         context = {
             'user': logged_user,
+            'images': logged_user.user_images.all()
         }
+        print(logged_user.user_images.all())
         print(logged_user.username)
 
         return render(request, 'insta_feed.html', context)
@@ -43,3 +45,20 @@ def reg_logic(request):
 def logout(request):
     request.session.flush()
     return redirect('/insta-feed')
+
+
+def add_image(request):
+    if 'user_id' in request.session:
+        if request.method == 'POST':
+            logged_user = User.objects.get(id = request.session['user_id'])
+            new_image = Images.objects.create(
+                uploader = logged_user,
+                image = request.FILES['image']
+            )
+            print('uploaded')
+            return redirect('/insta-feed/dashboard')
+        else:
+            return redirect('/insta-feed/dashboard')
+    else:
+        return redirect('/insta-feed')
+        

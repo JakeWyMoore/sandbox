@@ -15,6 +15,20 @@
         }
         .head {
             text-align: center;
+            padding: 10px 0px 35px 0px;
+        }
+        .feed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .feed table {
+            width: 915px;
+        }
+        .feed img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -23,6 +37,22 @@
         <div class="head">
             <h1>@{{ user.username }}</h1>
             <a href="/insta-feed/logout">Logout</a>
+            <form action="/insta-feed/add-image" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="image" accept="image/*">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        <div class="feed">
+            <table>
+                <tr>
+                    <td>            
+                        {% for i in images %}
+                            <img src="{{ i.image.url }}" alt="image">
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
