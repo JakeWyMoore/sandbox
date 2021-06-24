@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'apps.first_app',
     'apps.second_app',
+    'apps.insta_feed',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
