@@ -32,6 +32,7 @@
         .head h1 {
             font-family: 'Noto Sans KR', sans-serif;
             color: white;
+            text-transform: uppercase;
         }
         .head a {
             font-family: 'Noto Sans KR', sans-serif;
@@ -164,7 +165,9 @@
             color: #e65353;
             text-shadow: 0px 0px 10px #e65353;
         }
-
+        .test {
+            position: absolute;
+        }
         
 
 
@@ -196,8 +199,10 @@
                 <tr>
                     <td>            
                         {% for i in images reversed%}
-                            <div class="container">
-                                <img src="{{ i.image.url }}" alt="image" class="image">
+                            <div class="container ">
+                                <!-- <img src="{{ i.image.url }}" alt="image" class="image" id="drag1" draggable="true" ondragstart="drag(event)"> -->
+                                <img src="{{ i.image.url }}" alt="image" class="image" >
+
                                 <div class="middle">
                                     <div class="text">
                                         <a href="/insta-feed/delete/{{ i.id }}">
@@ -210,6 +215,7 @@
                     </td>
                 </tr>
             </table>
+            <!-- <div class="container" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
         </div>
     </div>
 
@@ -225,6 +231,20 @@
                 )
             }
         )
+
+
+        // function allowDrop(ev) {
+        //     ev.preventDefault();
+        // }
+        // function drag(ev) {
+        //     ev.dataTransfer.setData("text", ev.target.id)
+        // }
+        // function drop(ev) {
+        //     ev.preventDefault();
+        //     var data = ev.dataTransfer.getData("text");
+        //     ev.target.appendChild(document.getElementById(data));
+        // }
+
     </script>
 </body>
 </html>
