@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- font awesome -->
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <title>Simple CSS</title>
     {% load static %}
@@ -18,8 +22,63 @@
         padding: 0;
         text-align: center;
     }
+    body {
+        transition: .2s;
+        padding-top: 50px;
+    }
+    .dark-mode {
+        background: #242424;
+        color: white;
+        transition: .2s;
+    }
+    .fas {
+        background: none;
+    }
+    h1 {
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
+    h2 {
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
+    h3 {
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
+    h4 {
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
+    p {
+        font-family: 'Source Code Pro', monospace;
+        text-transform: uppercase;
+    }
+
+    .top-section {
+        padding: 25px;
+    }
+
+    .top-section button {
+        margin: 10px;
+        padding: 10px 20px;
+        border-radius: 15px;
+        border: 3px solid #242424;
+        background: #242424;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        transition: 0.3s;
+    }
+    .dark-mode .top-section button {
+        border: 3px solid white;
+        background: white;
+        color: #242424;
+        transition: 0.3s;    }
+
     .color-combos-container {
         padding: 50px;
+
     }
 
     /* SCHEME ONE */
@@ -37,18 +96,68 @@
     }
     .scheme-1-color-4 {
         background-color: #C38D9E;
-        color: rgb(85, 44, 33);
+        color: #7a5863;
     }
     .scheme-1-color-5 {
         background-color: #41B3A3;
         color: #1c4e48;
     }
 
+    /* SCHEME TWO */
+    .scheme-2-color-1 {
+        background-color: #242582;
+        color: #11123f;
+    }
+    .scheme-2-color-2 {
+        background-color: #553D67;
+        color: #201727;
+    }
+    .scheme-2-color-3 {
+        background-color: #E8A87C;
+        color: #7c5941;
+    }
+    .scheme-2-color-4 {
+        background-color: #99738E;
+        color: #463541;
+    }
+    .scheme-2-color-5 {
+        background-color: #2F2FA2;
+        color: #131341;
+    }
+
+    /* SCHEME THREE */
+    .scheme-3-color-1 {
+        background-color: #05386B;
+        color: #02182e;
+    }
+    .scheme-3-color-2 {
+        background-color: #379683;
+        color: #113029;
+    }
+    .scheme-3-color-3 {
+        background-color: #5CDB95;
+        color: #2d6e4b;
+    }
+    .scheme-3-color-4 {
+        background-color: #8EE4AF;
+        color: #3b634a;
+    }
+    .scheme-3-color-5 {
+        background-color: #EDF5E1;
+        color: #7c8174;
+    }
+
     .color-combos {
         padding: 50px;
     }
+    .color-combos tr {
+        display: flex;
+        justify-content: center;
+    }
     .color-combos td {
-        padding: 20px 35px;
+        width: 100px;
+        padding: 25px;
+        margin: 5px;
     }
     .buttons-container {
         padding: 50px;
@@ -75,27 +184,55 @@
         background: coral;
         border: 3px solid coral;
         transition: 0.3s;
-
     }
     </style>
 
 </head>
 <body>
     <div class="container">
-        <h1>Simple CSS</h1>
-        <p>The purpose of Simple CSS is to display my styles for multiple types of elements.</p>
-    
+        <div class="top-section">
+            <h1>Simple CSS</h1>
+            <p>The purpose of Simple CSS is to display my styles for multiple types of elements.</p>
+        
+            <button onclick="myFunction()">Toggle dark mode</button>
+        </div>
+
         <div class="color-combos-container">
             <h3>Color Schemes</h3>
             <div class="color-combos">
                 <div class="scheme-1">
                     <table>
+                        <h4>Scheme One</h4>
                         <tr>
                             <td class="scheme-1-color-1">#E27D60</td>
                             <td class="scheme-1-color-2">#85DCB0</td>
                             <td class="scheme-1-color-3">#E8A87C</td>
                             <td class="scheme-1-color-4">#C38D9E</td>
-                            <td class="scheme-1-color-4">#41B3A3</td>
+                            <td class="scheme-1-color-5">#41B3A3</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="scheme-2">
+                    <table>
+                        <h4>Scheme Two</h4>
+                        <tr>
+                            <td class="scheme-2-color-1">#242582</td>
+                            <td class="scheme-2-color-2">#553D67</td>
+                            <td class="scheme-2-color-3">#F64C72</td>
+                            <td class="scheme-2-color-4">#99738E</td>
+                            <td class="scheme-2-color-5">#2F2FA2</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="scheme-3">
+                    <table>
+                        <h4>Scheme Three</h4>
+                        <tr>
+                            <td class="scheme-3-color-1">#05386B</td>
+                            <td class="scheme-3-color-2">#379683</td>
+                            <td class="scheme-3-color-3">#5CDB95</td>
+                            <td class="scheme-3-color-4">#8EE4AF</td>
+                            <td class="scheme-3-color-5">#EDF5E1</td>
                         </tr>
                     </table>
                 </div>
@@ -112,5 +249,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+    </script>
+
 </body>
 </html>
