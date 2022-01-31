@@ -45,3 +45,30 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* MENU */
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu li {
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border-top: 2px solid transparent;
+
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+
+}
+.dark-mode .menu li:hover {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    transition: .5s;
+}
+.menu li:hover {
+    border-top: 2px solid #242424;
+    border-bottom: 2px solid #242424;
+    transition: .5s;
+}

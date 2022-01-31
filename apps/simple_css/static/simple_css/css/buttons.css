@@ -1,13 +1,21 @@
-.buttons-container {
-    padding: 50px;
+/* @import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"); */
+
+.container {
+    padding: 0px;
+}
+.top-section h2 {
+    margin: 50px;
 }
 .buttons {
-    width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
 }
+.buttons button {
+    margin: 15px;
+}
+/* DOWNLOAD BUTTON */
 .buttons .download {
     padding: 10px 20px;
     border-radius: 15px;
@@ -22,5 +30,87 @@
 .buttons .download:hover {
     background: coral;
     border: 3px solid coral;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+/* LOGIN BUTTON */
+.buttons .login {
+    /* width: 170px; */
+    padding: 10px 40px;
+    border-radius: 15px;
+    border: 3px solid #374785;
+    background: #374785;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.3s;
+    
+}
+.buttons .login:hover {
+    transition: .2s;
+    cursor: pointer;
+    transform: scale(1.2,1.2);
+    background: transparent;
+    border: 3px solid #374785;
+    color: #374785;
+}
+
+.login:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f2f6";
+    font-weight: 900;
+    position: absolute;
+    opacity: 0;  
+    top: 11px;
+    right: 0px;
+    transition: 0.5s;
+}
+
+.login:hover{
+    padding-right: 40px;
+    padding-left: 20px;
+  }
+  
+.login:hover:after {
+    opacity: 1;
+    right: 15px;
+  }
+
+  
+/* LOGOUT */
+.buttons .logout {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 3px solid #374785;
+    background: #374785;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+/* SLIDE */
+.buttons .slide {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 3px solid #374785;
+    background: #374785;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+/* UPLOAD */
+.buttons .upload {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 3px solid #374785;
+    background: #374785;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     transition: 0.3s;
 }

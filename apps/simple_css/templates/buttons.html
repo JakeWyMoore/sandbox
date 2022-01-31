@@ -21,16 +21,45 @@
     <title>Simple Buttons</title>
 </head>
 <body>
-    <div class="buttons-container">
-        <h3>Buttons</h3>
-        <div class="buttons">
-            <button class="download"><i class="fas fa-cloud-download-alt"></i> Download</button>
-            <button class="login">Login</button>
-            <button class="logout">Logout</button>
-            <button class="slide">Slide</button>
-            <button class="upload">Upload</button>
+    <div class="container">
+        <div class="top-section">
+            <div class="menu">
+                <ul>
+                    <a href="buttons">
+                        <li>Buttons</li>
+                    </a>
+                    <a href="">
+                        <li>Color Schemes</li>
+                    </a>
+                    <a href="">
+                        <li>Tables</li>
+                    </a>
+                    <a href="">
+                        <li>Forms</li>
+                    </a>
+                    <a href="">
+                        <li>Menus</li>
+                    </a>
+                </ul>
+            </div>
+
+            <h2>Buttons</h2>
         </div>
+
+        <div class="buttons-container">
+            <div class="buttons">
+                <button class="download"><i class="fas fa-cloud-download-alt"></i> Download</button>
+                <button class="login">Login</button>
+                <button class="logout">Logout</button>
+                <button class="slide">Slide</button>
+                <button class="upload">Upload</button>
+            </div>
+        </div>
+
     </div>
+
+    <script src="{% static 'simple_css/js/global.js' %}"></script>
+
 </div>
 </body>
 </html>
