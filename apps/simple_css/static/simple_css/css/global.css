@@ -12,6 +12,10 @@ body {
     color: white;
     transition: .2s;
 }
+.dark-mode a {
+    color: white;
+    text-decoration: none;
+}
 .fas {
     background: none;
 }
@@ -34,4 +38,10 @@ h4 {
 p {
     font-family: 'Source Code Pro', monospace;
     text-transform: uppercase;
+}
+a {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
 }
