@@ -1,0 +1,23 @@
+.top-section {
+    padding: 25px;
+}
+.top-section button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 3px solid #242424;
+    background: #242424;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+.top-section button:hover {
+    cursor: pointer;
+}
+.dark-mode .top-section button {
+    border: 3px solid white;
+    background: white;
+    color: #242424;
+    transition: 0.3s;    
+}

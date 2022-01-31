@@ -1,0 +1,37 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+body {
+    transition: .2s;
+    padding-top: 50px;
+}
+.dark-mode {
+    background: #242424;
+    color: white;
+    transition: .2s;
+}
+.fas {
+    background: none;
+}
+h1 {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+h2 {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+h3 {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+h4 {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
+p {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+}
