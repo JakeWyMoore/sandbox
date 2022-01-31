@@ -27,7 +27,7 @@
             <h1>Simple Styles</h1>
             <p>The purpose of Simple CSS is to display my styles for multiple types of elements.</p>
         
-            <button onclick="myFunction()"><i class="far fa-moon"></i> Toggle dark mode</button>
+            <button id="dark-mode-toggle"><i class="far fa-moon"></i> Toggle dark mode</button>
         </div>
         <div class="menu">
             <ul>
@@ -43,16 +43,28 @@
                 <a href="">
                     <li>Forms</li>
                 </a>
+                <a href="">
+                    <li>Menus</li>
+                </a>
             </ul>
         </div>
     </div>
 
-    <script>
+    <script src="{% static 'simple_css/js/global.js' %}"></script>
+
+    <!-- <script>
         function myFunction() {
            var element = document.body;
            element.classList.toggle("dark-mode");
+           localStorage.setItem("theme", "dark");
         }
-    </script>
+
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add('dark');
+            button.innerHTML = "Turn off dark mode";
+        }    
+    
+    </script> -->
 
 </body>
 </html>
