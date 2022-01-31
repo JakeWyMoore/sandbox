@@ -22,8 +22,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('apps.first_app.urls')),
-    path('', include('apps.second_app.urls')),
     path('insta-feed/', include('apps.insta_feed.urls')),
+    path('simple-css/', include('apps.simple_css.urls')),
+
 
 ]
 
