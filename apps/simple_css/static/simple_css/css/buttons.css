@@ -155,19 +155,4 @@
     color: white;
     padding: 15px;
 }
-/* .buttons .subscribe:after {
-    background: #374785;
-    opacity: 0;  
-    top: 11px;
-    right: 0px;
-} */
 
-.footer {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.footer h3 {
-    flex: 1;
-}
