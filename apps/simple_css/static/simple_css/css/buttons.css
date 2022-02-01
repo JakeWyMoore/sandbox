@@ -15,6 +15,9 @@
 .buttons button {
     margin: 15px;
 }
+.pointer:hover {
+    cursor: pointer;
+}
 /* DOWNLOAD BUTTON */
 .buttons .download {
     padding: 10px 20px;
@@ -39,24 +42,22 @@
 .buttons .login {
     /* width: 170px; */
     padding: 10px 40px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: 3px solid #374785;
     background: #374785;
     color: white;
     text-transform: uppercase;
     letter-spacing: 3px;
     transition: 0.3s;
-    
 }
 .buttons .login:hover {
     transition: .2s;
     cursor: pointer;
     transform: scale(1.2,1.2);
-    background: transparent;
+    background: #374785;
     border: 3px solid #374785;
-    color: #374785;
+    color: white;
 }
-
 .login:after {
     font-family: "Font Awesome 5 Free";
     content: "\f2f6";
@@ -66,41 +67,64 @@
     top: 11px;
     right: 0px;
     transition: 0.5s;
+    color: white;
 }
-
 .login:hover{
     padding-right: 40px;
     padding-left: 20px;
-  }
-  
+}
 .login:hover:after {
     opacity: 1;
     right: 15px;
-  }
+    color: white;
+}
 
-  
 /* LOGOUT */
-.buttons .logout {
+.buttons .glow {
     padding: 10px 20px;
     border-radius: 15px;
-    border: 3px solid #374785;
-    background: #374785;
+    border: 3px solid #15db95;
+    background: #15db95;
     color: white;
     text-transform: uppercase;
     letter-spacing: 3px;
     transition: 0.3s;
 }
+.buttons .glow:hover {
+    cursor: pointer;
+    border: 3px solid #15db95;
+    letter-spacing: 5px;
+    box-shadow: 0px 0px 25px 3px #15db95;}
 
 /* SLIDE */
-.buttons .slide {
-    padding: 10px 20px;
-    border-radius: 15px;
-    border: 3px solid #374785;
-    background: #374785;
+.trash {
+    font-size: 20px;
+    font-weight: 900;
+}
+.buttons .trash {
+    padding: 20px 22px;
+    border-radius: 50px;
+    border: 3px solid grey;
+    background: grey;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 3px;
     transition: 0.3s;
+}
+.buttons .trash:hover {
+    padding: 20px 50px;
+    border: 3px solid #fc4445;
+    background: #fc4445;
+
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.buttons .trash .far {
+    transition: 0.3s;
+}
+.buttons .trash:hover .far {
+    transform: rotate(45deg);
+    transition: 0.3s ease-in-out;
+
 }
 
 /* UPLOAD */
