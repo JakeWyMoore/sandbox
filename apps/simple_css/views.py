@@ -5,3 +5,6 @@ def index(request):
 
 def buttons(request):
     return render(request, 'buttons.html')
+
+def color_schemes(request):
+    return render(request, 'color_schemes.html')

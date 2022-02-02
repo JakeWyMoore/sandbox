@@ -73,6 +73,10 @@ a {
     transition: .5s;
 }
 
+.top-section h2 {
+    margin: 50px;
+}
+
 /* FOOTER */
 .footer {
     padding: 50px;
