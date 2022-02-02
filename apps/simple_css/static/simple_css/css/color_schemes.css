@@ -3,7 +3,7 @@
     padding: 0;
 }
 .scheme {
-    padding: 20px;
+    padding: 20px 0px;
 }
 .color-combos {
     padding: 50px;
@@ -86,23 +86,23 @@
 }
 
 /* SCHEME THREE */
-.scheme-3-color-1 {
-    background-color: #05386B;
-    color: #02182e;
+.scheme-4-color-1 {
+    background-color: #8D8741;
+    color: #312f16;
 }
-.scheme-3-color-2 {
-    background-color: #379683;
-    color: #113029;
+.scheme-4-color-2 {
+    background-color: #659DBD;
+    color: #2c4655;
 }
-.scheme-3-color-3 {
-    background-color: #5CDB95;
-    color: #2d6e4b;
+.scheme-4-color-3 {
+    background-color: #DAAD86;
+    color: #5f4b39;
 }
-.scheme-3-color-4 {
-    background-color: #8EE4AF;
-    color: #3b634a;
+.scheme-4-color-4 {
+    background-color: #BC986A;
+    color: #4b3c28;
 }
-.scheme-3-color-5 {
-    background-color: #EDF5E1;
-    color: #7c8174;
+.scheme-4-color-5 {
+    background-color: #FBEEC1;
+    color: #888065;
 }
