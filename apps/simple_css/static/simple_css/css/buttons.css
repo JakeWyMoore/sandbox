@@ -10,6 +10,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px;
 }
 .col-1 {
     width: 50%;
